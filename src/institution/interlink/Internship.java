@@ -1,11 +1,13 @@
 package institution.interlink;
 
+import java.util.*;
 import person.Student;
 import institution.University;
 
 public class Internship {
 
     private String internshipName;
+    private ArrayList<Student> arr;
 
     public Internship(String name) {
         internshipName = name;
@@ -16,11 +18,10 @@ public class Internship {
     }
 
     public String getStudents() {
-        University u = new University("lol");
-        ArrayList<Student> arr = u->getStudentsList();
+        University uni = new University("helper");
+        arr = uni.getStudentsList();
         String tmp = "";
-        for (Student st:
-             arr) {
+        for (Student st : arr) {
             tmp += st.getStudentName() + "\n";
         }
         return tmp;
