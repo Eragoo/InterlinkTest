@@ -29,7 +29,6 @@ public class Internship {
             summOfMark += student.getKnowledge();
         }
         int normalMark = summOfMark/students.size();
-        System.out.print(normalMark);
 
         for (Student student : students) {
             mark = student.getKnowledge();
