@@ -16,7 +16,10 @@ public class Student {
     }
 
     public String getStudentName() {
+
         return studentName;
     }
-
+    public int getKnowledge(){
+        return studentKnowledge.getKnowledge();
+    }
 }

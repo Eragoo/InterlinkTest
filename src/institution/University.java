@@ -15,7 +15,8 @@ public class University {
     }
 
     private void setStudent(Student student) {
-        int level = (int) (10);
+        int level = (int) (new Random().nextInt(10-1+1) + 1);
+        System.out.println(level);
         student.setKnowledge(new Knowledge(level));
     }
 

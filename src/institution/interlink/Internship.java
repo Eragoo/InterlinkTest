@@ -7,22 +7,35 @@ import institution.University;
 public class Internship {
 
     private String internshipName;
-    private ArrayList<Student> arr;
+    private ArrayList<Student> students;
 
     public Internship(String name) {
         internshipName = name;
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
-    }
-
     public String getStudents() {
         University uni = new University("helper");
-        arr = uni.getStudentsList();
+        students = uni.getStudentsList();
+        return filterStudents(students);
+    }
+
+    private String filterStudents(ArrayList<Student> arrList) {
+        students = arrList;
         String tmp = "";
-        for (Student st : arr) {
-            tmp += st.getStudentName() + "\n";
+        int summOfMark = 0;
+        int mark = 0;
+
+        for (Student student : students) {
+            summOfMark += student.getKnowledge();
+        }
+        int normalMark = summOfMark/students.size();
+        System.out.print(normalMark);
+
+        for (Student student : students) {
+            mark = student.getKnowledge();
+            if (mark > normalMark) {
+                tmp += student.getStudentName() + "\n";
+            }
         }
         return tmp;
     }
