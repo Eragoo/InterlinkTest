@@ -36,6 +36,9 @@ public class Internship {
                 tmp += student.getStudentName() + "\n";
             }
         }
+        if (tmp == ""){
+            return "Empty :(";
+        }
         return tmp;
     }
 }
